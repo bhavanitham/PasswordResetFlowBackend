@@ -8,7 +8,13 @@ const UserRoute = require('./Routes/UserRoute');
 const cors = require('cors');
 
 //middleware
-app.use(cors());
+const corsOptions = {
+  origin: '*', // Allows all origins
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
  
